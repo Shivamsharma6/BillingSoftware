@@ -371,7 +371,7 @@ namespace BillingSoftware
         {
             if (spnmb.Text == "label9")
             {
-                //this.Hide(); LOGIN OPEN ON MAIN PROGRAMM
+                this.Hide(); /*LOGIN OPEN ON MAIN PROGRAMM*/
                 Nlogin nlogin = new Nlogin();
                 nlogin.Show();
                 return 0;

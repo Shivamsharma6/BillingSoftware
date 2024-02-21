@@ -56,8 +56,6 @@ namespace BillingSoftware
             {
                 ControlID.TextData = txt_UserName.Text;
                 ControlID.UserData = textBox1.Text;
-                // ControlID.PassData = textBox2.Text;
-
 
                 //Create SqlConnection
                 SqlConnection con = new SqlConnection(cs);
@@ -70,11 +68,15 @@ namespace BillingSoftware
                 adapt.Fill(ds);
                 con.Close();
                 int count = ds.Tables[0].Rows.Count;
-
-                timer2.Start();
-                //timer2.Enabled = true;
-
-
+                if (count > 0)
+                {
+                    timer2.Start();
+                    timer2.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Please provide valid credentials!");
+                }
             }
             catch (Exception ex)
             {
@@ -124,9 +126,8 @@ namespace BillingSoftware
             {
                 frmMain fm = new frmMain();
                 fm.Show();
-
-                timer2.Enabled = false;
-                
+                this.Close();
+                timer2.Enabled = false;                
             }
         }
 
