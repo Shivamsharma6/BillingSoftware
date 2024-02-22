@@ -190,9 +190,6 @@ namespace BillingSoftware
             this.Greet.TabIndex = 81;
             this.Greet.Text = "label1";
             // 
-            // timer1
-            // 
-            // 
             // pb
             // 
             this.pb.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
@@ -278,7 +275,7 @@ namespace BillingSoftware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Indigo;
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(402, 333);
             this.Controls.Add(this.groupBox1);
