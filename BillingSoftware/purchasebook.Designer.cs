@@ -38,6 +38,7 @@ namespace BillingSoftware
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,13 +115,23 @@ namespace BillingSoftware
             this.label4.Size = new System.Drawing.Size(171, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = "Purchase Book";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // Search
+            // 
+            this.Search.Location = new System.Drawing.Point(537, 163);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(99, 25);
+            this.Search.TabIndex = 9;
+            this.Search.Text = "Search";
+            this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // purchasebook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 450);
+            this.Controls.Add(this.Search);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker2);
@@ -146,5 +157,6 @@ namespace BillingSoftware
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Search;
     }
 }

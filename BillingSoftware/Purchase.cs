@@ -79,7 +79,7 @@ namespace BillingSoftware
         {
             if (e.KeyChar == 13)
             {
-                string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+                string cs = @"Data Source=localhost;Initial Catalog=MyDatabase.mdf;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(cs);
                 conn.Open();
                 String sqlquery = "SELECT * FROM prodinfo WHERE code =" + Int64.Parse(pcode.Text);
@@ -98,7 +98,7 @@ namespace BillingSoftware
 
         private void Purchase_Load(object sender, EventArgs e)
         {
-            string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+            string cs = @"Data Source=localhost;Initial Catalog=MyDatabase.mdf;Integrated Security=True";
             //Create sql connection add
             SqlConnection con = new SqlConnection(cs);
             con.Open();

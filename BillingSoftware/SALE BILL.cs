@@ -99,6 +99,7 @@ namespace BillingSoftware
             gttl.Text = "0";
             pamnt.Text = "0";
             ramnt.Text = "0";
+            subttl.Text = "0";
 
             cust_name.AutoCompleteMode = AutoCompleteMode.Suggest;
             cust_name.AutoCompleteSource = AutoCompleteSource.CustomSource;
