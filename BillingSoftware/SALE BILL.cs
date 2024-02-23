@@ -24,6 +24,7 @@ namespace BillingSoftware
         public TextBox tb8;
 
 
+
         public static class ControlID
         {
             public static string subtotal { get; set; }
@@ -101,12 +102,19 @@ namespace BillingSoftware
 
             cust_name.AutoCompleteMode = AutoCompleteMode.Suggest;
             cust_name.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
+            getDataa(DataCollection);
+            cust_name.AutoCompleteCustomSource = DataCollection;
+
+            pname.AutoCompleteMode = AutoCompleteMode.Suggest;
+            pname.AutoCompleteSource = AutoCompleteSource.CustomSource;
             AutoCompleteStringCollection DataCollectionn = new AutoCompleteStringCollection();
-            getDataa(DataCollectionn);
-            cust_name.AutoCompleteCustomSource = DataCollectionn;
+            getData(DataCollectionn);
+            pname.AutoCompleteCustomSource = DataCollectionn;
 
             this.ActiveControl = cust_name;
             dataGridView1.Hide();
+            dataGridView2.Hide();
 
         }
 
@@ -116,7 +124,7 @@ namespace BillingSoftware
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
-            string sql = "SELECT DISTINCT [code] FROM [prodinfo]";
+            string sql = "SELECT DISTINCT [name] FROM [prodinfo]";
             connection = new SqlConnection(cs);
             try
             {
@@ -165,7 +173,7 @@ namespace BillingSoftware
                 MessageBox.Show("Can not connect to database! ");
             }
         }
-        //Console.WriteLine("Hellow world!");
+
         private void button5_Click(object sender, EventArgs e)
         {
             SalesSave();
@@ -344,29 +352,6 @@ namespace BillingSoftware
             }
         }
 
-        private void cust_name_KeyDown(object sender, KeyEventArgs e)
-        {
-            /*            if (e.KeyData == Keys.Return)
-                        {
-                            SqlConnection conn = new SqlConnection(cs);
-                            conn.Open();
-                            String sqlquery = "SELECT * FROM custinfo WHERE name =@custname";
-
-                            SqlCommand cmd = new SqlCommand(sqlquery, conn);
-                            cmd.Parameters.AddWithValue("@custname", cust_name.Text);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
-                            {
-                                email.Text = (dr["email"].ToString());
-                                add.Text = (dr["address"].ToString());
-                                ccode.Text = (dr["code"].ToString());
-                                mob.Text = (dr["mobile"].ToString());
-                                ControlID.customer = cust_name.Text;
-                            }
-                        }*/
-                            dataGridView2.Hide();
-        }
-
         private void dis_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -407,61 +392,6 @@ namespace BillingSoftware
                 paid = paid - grandtotal;
                 ramnt.Text = paid.ToString();
                 billttl.Text = grandtotal.ToString();
-            }
-        }
-
-        private void qty_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                if (qty.Text == "")
-                {
-                    MessageBox.Show("Please Input Quantity");
-                    //DataGridView.CurrentCell = dataGridView1.CurrentRow.Cells[e.ColumnIndex + 1];
-                }
-                try
-                {
-                    // data base = text box name
-                    string prodcode = pcode.Text;
-                    string prodname = pname.Text;
-                    string pack = pk.Text;
-                    string expiry = exp.Text;
-                    string dis = disc.Text;
-
-                    int price = int.Parse(mrp.Text);
-                    int quantity = int.Parse(qty.Text);
-                    int diss = int.Parse(disc.Text);
-
-                    int amt = price * quantity;
-                    int tot = amt - (amt * diss / 100);
-                    this.GP1.Rows.Add(prodname, prodcode, expiry, pack, price, quantity, amt, dis, tot);  // show in data grid view
-
-                    int sum = 0;
-                    for (int row = 0; row < GP1.Rows.Count; row++)
-                    {
-                        sum = sum + Convert.ToInt32(GP1.Rows[row].Cells[8].Value);
-                    }
-                    subttl.Text = sum.ToString();
-
-                    pcode.Clear();
-                    pname.Clear();
-                    pk.Clear();
-                    exp.Clear();
-                    mrp.Clear();
-                    qty.Clear();
-                    bal.Clear();
-                    disc.Clear();
-
-                    dataGridView1.Hide();
-                    ActiveControl = pname;
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                qty.Focus();
-                e.Handled = true;
             }
         }
 
@@ -599,12 +529,43 @@ namespace BillingSoftware
         {
             if (e.KeyCode == Keys.Enter)
             {
-                qty.Focus();
-                e.Handled = true;
-                // this.Hide();
+                if (qty.Text == "")
+                {
+                    MessageBox.Show("Please Input Quantity");
+                }
+                try
+                {
+                    // data base = text box name
+                    string prodcode = pcode.Text;
+                    string prodname = pname.Text;
+                    string pack = pk.Text;
+                    string expiry = exp.Text;
+                    string dis = disc.Text;
+
+                    int price = int.Parse(mrp.Text);
+                    int quantity = int.Parse(qty.Text);
+                    int diss = int.Parse(disc.Text);
+
+                    int amt = price * quantity;
+                    int tot = amt - (amt * diss / 100);
+                    this.GP1.Rows.Add(prodname, prodcode, expiry, pack, price, quantity, amt, dis, tot);  // show in data grid view
+
+                    int sum = 0;
+                    for (int row = 0; row < GP1.Rows.Count; row++)
+                    {
+                        sum = sum + Convert.ToInt32(GP1.Rows[row].Cells[8].Value);
+                    }
+                    subttl.Text = sum.ToString();
+                    clear_form();
+                    qty.Clear();
+                    this.ActiveControl = pname;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
-
 
         private void pname_Click(object sender, EventArgs e)
         {
@@ -613,109 +574,72 @@ namespace BillingSoftware
 
         }
 
-/*        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int index = e.RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[index];
-                pcode.Text = selectedRow.Cells[0].Value.ToString();
-                pname.Text = selectedRow.Cells[1].Value.ToString();
-                pk.Text = selectedRow.Cells[2].Value.ToString();
-                exp.Text = selectedRow.Cells[3].Value.ToString();
-                mrp.Text = selectedRow.Cells[4].Value.ToString();
-                disc.Text = selectedRow.Cells[5].Value.ToString();
-                bal.Text = selectedRow.Cells[6].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-            }
-        }*/
-
         SqlConnection con;
         SqlDataAdapter adapt;
         DataTable dt;
 
-/*        private void pname1_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                con = new SqlConnection(cs);
-                con.Open();
-                adapt = new SqlDataAdapter("select * from prodinfo where name like '" + pname.Text + "%'", con);
-                dt = new DataTable();
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-                con.Close();
-                dataGridView1.Show();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }*/
-        //string name;
-/*        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        int _selectedRowIndexCust = -1;
+        private void cust_name_KeyDown(object sender, KeyEventArgs e)
         {
             {
-                try
+                if (e.KeyCode == Keys.Enter)
                 {
-                    int index = e.RowIndex;
-                    DataGridViewRow selectedRow = dataGridView2.Rows[index];
-                    ccode.Text = selectedRow.Cells[0].Value.ToString();
-                    cust_name.Text = selectedRow.Cells[1].Value.ToString();
-                    add.Text = selectedRow.Cells[2].Value.ToString();
-                    mob.Text = selectedRow.Cells[3].Value.ToString();
-                    email.Text = selectedRow.Cells[4].Value.ToString();
+                    // Perform the same actions as in the TextChanged event handler
+                    try
+                    {
+                        con = new SqlConnection(cs);
+                        con.Open();
+                        adapt = new SqlDataAdapter("select * from custinfo where name like '" + cust_name.Text + "%'", con);
+                        dt = new DataTable();
+                        adapt.Fill(dt);
+                        dataGridView2.DataSource = dt;
+                        con.Close();
+                        dataGridView2.Show();
 
-                    dataGridView2.Hide();
-
-                }
-                catch (Exception ex)
-                {
+                        _selectedRowIndexCust = 0; // Set initial selected row to the first row
+                        dataGridView2.Focus();
+                        dataGridView2.CurrentCell = dataGridView1.Rows[_selectedRowIndexCust].Cells[0]; // Focus on the first cell
+                    }
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString());
                     }
                 }
             }
-        }*/
-
-        private void cust_name_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                con = new SqlConnection(cs);
-                con.Open();
-                adapt = new SqlDataAdapter("select * from custinfo where name like '" + cust_name.Text + "%'", con);
-                dt = new DataTable();
-                adapt.Fill(dt);
-                dataGridView2.DataSource = dt;
-                con.Close();
-                dataGridView2.Show();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            
-        }
-
-        private void cust_name_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                SendKeys.Send("{TAB}");
-            }
         }
 
         private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode.Equals(Keys.Enter))
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
             {
-                this.dataGridView2.CurrentRow.Selected = true;
-                e.Handled = true;
+                e.SuppressKeyPress = true; // Prevent default navigation
+
+                int newRowIndex = _selectedRowIndexCust;
+                if (e.KeyCode == Keys.Up)
+                {
+                    newRowIndex--;
+                    if (newRowIndex < 0) newRowIndex = 0;
+                }
+                else if (e.KeyCode == Keys.Down)
+                {
+                    newRowIndex++;
+                    if (newRowIndex >= dataGridView2.Rows.Count) newRowIndex = dataGridView2.Rows.Count - 1;
+                }
+
+                _selectedRowIndexCust = newRowIndex;
+                dataGridView2.CurrentCell = dataGridView2.Rows[_selectedRowIndexCust].Cells[0];
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                DataGridViewRow selectedRow = dataGridView2.Rows[_selectedRowIndexCust];
+                ccode.Text = selectedRow.Cells[0].Value.ToString();
+                cust_name.Text = selectedRow.Cells[1].Value.ToString();
+                add.Text = selectedRow.Cells[2].Value.ToString();
+                mob.Text = selectedRow.Cells[4].Value.ToString();
+                email.Text = selectedRow.Cells[5].Value.ToString();
+
+                dataGridView2.Hide();
+                this.ActiveControl = pname;
             }
         }
 
@@ -743,6 +667,10 @@ namespace BillingSoftware
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
+                }
+                if (GP1.Rows.Count > 0)
+                {
+                    ActiveControl = subttl;
                 }
             }
         }
@@ -778,34 +706,20 @@ namespace BillingSoftware
                 mrp.Text = selectedRow.Cells[4].Value.ToString();
                 disc.Text = selectedRow.Cells[5].Value.ToString();
                 bal.Text = selectedRow.Cells[6].Value.ToString();
-
                 dataGridView1.Hide();
+                this.ActiveControl = qty;
             }
-            /*            if (e.KeyCode == Keys.Up)
-                        {
-                            _selectedRowIndex--;
-                            if (_selectedRowIndex < 0) _selectedRowIndex = 0;
-                            dataGridView1.CurrentCell = dataGridView1.Rows[_selectedRowIndex].Cells[0];
-                        }
-                        else if (e.KeyCode == Keys.Down)
-                        {
-                            _selectedRowIndex++;
-                            if (_selectedRowIndex >= dataGridView1.Rows.Count) _selectedRowIndex = dataGridView1.Rows.Count - 1;
-                            dataGridView1.CurrentCell = dataGridView1.Rows[_selectedRowIndex].Cells[0];
-                        }
-                        else if (e.KeyCode == Keys.Enter)
-                        {
-                            DataGridViewRow selectedRow = dataGridView1.Rows[_selectedRowIndex];
-                            pcode.Text = selectedRow.Cells[0].Value.ToString();
-                            pname.Text = selectedRow.Cells[1].Value.ToString();
-                            pk.Text = selectedRow.Cells[2].Value.ToString();
-                            exp.Text = selectedRow.Cells[3].Value.ToString();
-                            mrp.Text = selectedRow.Cells[4].Value.ToString();
-                            disc.Text = selectedRow.Cells[5].Value.ToString();
-                            bal.Text = selectedRow.Cells[6].Value.ToString();
-                            dataGridView1.Hide();
-                            qty.Focus();
-                        }*/
+        }
+
+        public void clear_form()
+        {
+            pname.Clear();
+            pcode.Clear();
+            pk.Clear();
+            exp.Clear();
+            mrp.Clear();
+            disc.Clear();
+            bal.Clear();
         }
     }
 }
