@@ -104,7 +104,6 @@
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -112,13 +111,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_LogOut
             // 
             resources.ApplyResources(this.btn_LogOut, "btn_LogOut");
-            this.btn_LogOut.BackColor = System.Drawing.Color.Indigo;
+            this.btn_LogOut.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_LogOut.ForeColor = System.Drawing.Color.Yellow;
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.UseVisualStyleBackColor = false;
@@ -142,7 +140,7 @@
             // menuStrip1
             // 
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.menuStrip1.BackColor = System.Drawing.Color.MidnightBlue;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -160,7 +158,7 @@
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.MidnightBlue;
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -168,7 +166,7 @@
             // 
             // entryMenuToolStripMenuItem
             // 
-            this.entryMenuToolStripMenuItem.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.entryMenuToolStripMenuItem.BackColor = System.Drawing.Color.MidnightBlue;
             resources.ApplyResources(this.entryMenuToolStripMenuItem, "entryMenuToolStripMenuItem");
             this.entryMenuToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.entryMenuToolStripMenuItem.Image = global::BillingSoftware.Properties.Resources.password_img;
@@ -287,7 +285,7 @@
             // button7
             // 
             resources.ApplyResources(this.button7, "button7");
-            this.button7.BackColor = System.Drawing.Color.Indigo;
+            this.button7.BackColor = System.Drawing.Color.MidnightBlue;
             this.button7.ForeColor = System.Drawing.Color.Ivory;
             this.button7.Name = "button7";
             this.button7.UseVisualStyleBackColor = false;
@@ -296,7 +294,7 @@
             // biodata
             // 
             resources.ApplyResources(this.biodata, "biodata");
-            this.biodata.BackColor = System.Drawing.Color.Indigo;
+            this.biodata.BackColor = System.Drawing.Color.MidnightBlue;
             this.biodata.ForeColor = System.Drawing.Color.Ivory;
             this.biodata.Name = "biodata";
             this.biodata.UseVisualStyleBackColor = false;
@@ -305,7 +303,7 @@
             // button10
             // 
             resources.ApplyResources(this.button10, "button10");
-            this.button10.BackColor = System.Drawing.Color.Indigo;
+            this.button10.BackColor = System.Drawing.Color.MidnightBlue;
             this.button10.ForeColor = System.Drawing.Color.Ivory;
             this.button10.Name = "button10";
             this.button10.UseVisualStyleBackColor = false;
@@ -314,7 +312,7 @@
             // userinfo
             // 
             resources.ApplyResources(this.userinfo, "userinfo");
-            this.userinfo.BackColor = System.Drawing.Color.Indigo;
+            this.userinfo.BackColor = System.Drawing.Color.MidnightBlue;
             this.userinfo.ForeColor = System.Drawing.Color.Ivory;
             this.userinfo.Name = "userinfo";
             this.userinfo.UseVisualStyleBackColor = false;
@@ -323,7 +321,7 @@
             // stockreport
             // 
             resources.ApplyResources(this.stockreport, "stockreport");
-            this.stockreport.BackColor = System.Drawing.Color.Indigo;
+            this.stockreport.BackColor = System.Drawing.Color.MidnightBlue;
             this.stockreport.ForeColor = System.Drawing.Color.Ivory;
             this.stockreport.Name = "stockreport";
             this.stockreport.UseVisualStyleBackColor = false;
@@ -332,7 +330,7 @@
             // centry
             // 
             resources.ApplyResources(this.centry, "centry");
-            this.centry.BackColor = System.Drawing.Color.Indigo;
+            this.centry.BackColor = System.Drawing.Color.MidnightBlue;
             this.centry.ForeColor = System.Drawing.Color.Ivory;
             this.centry.Name = "centry";
             this.centry.UseVisualStyleBackColor = false;
@@ -366,7 +364,7 @@
             // purc
             // 
             resources.ApplyResources(this.purc, "purc");
-            this.purc.BackColor = System.Drawing.Color.Indigo;
+            this.purc.BackColor = System.Drawing.Color.MidnightBlue;
             this.purc.ForeColor = System.Drawing.Color.Ivory;
             this.purc.Name = "purc";
             this.purc.UseVisualStyleBackColor = false;
@@ -375,7 +373,7 @@
             // salebook
             // 
             resources.ApplyResources(this.salebook, "salebook");
-            this.salebook.BackColor = System.Drawing.Color.Indigo;
+            this.salebook.BackColor = System.Drawing.Color.MidnightBlue;
             this.salebook.ForeColor = System.Drawing.Color.Ivory;
             this.salebook.Name = "salebook";
             this.salebook.UseVisualStyleBackColor = false;
@@ -384,7 +382,7 @@
             // purcbook
             // 
             resources.ApplyResources(this.purcbook, "purcbook");
-            this.purcbook.BackColor = System.Drawing.Color.Indigo;
+            this.purcbook.BackColor = System.Drawing.Color.MidnightBlue;
             this.purcbook.ForeColor = System.Drawing.Color.Ivory;
             this.purcbook.Name = "purcbook";
             this.purcbook.UseVisualStyleBackColor = false;
@@ -393,8 +391,7 @@
             // groupBox3
             // 
             resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.BackColor = System.Drawing.Color.LightCyan;
-            this.groupBox3.Controls.Add(this.button6);
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.lblTime);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label7);
@@ -411,7 +408,6 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.shopadd);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.acyr);
             this.groupBox3.Controls.Add(this.mob);
@@ -551,7 +547,7 @@
             // button2
             // 
             resources.ApplyResources(this.button2, "button2");
-            this.button2.BackColor = System.Drawing.Color.Indigo;
+            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
             this.button2.ForeColor = System.Drawing.Color.Ivory;
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = false;
@@ -559,7 +555,7 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.BackColor = System.Drawing.Color.LightCyan;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.purc);
             this.groupBox1.Controls.Add(this.btn_LogOut);
@@ -577,7 +573,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Indigo;
+            this.button3.BackColor = System.Drawing.Color.MidnightBlue;
             resources.ApplyResources(this.button3, "button3");
             this.button3.ForeColor = System.Drawing.Color.Ivory;
             this.button3.Name = "button3";
@@ -607,7 +603,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.LightCyan;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox3.Name = "pictureBox3";
@@ -676,12 +672,6 @@
             this.label10.ForeColor = System.Drawing.Color.Navy;
             this.label10.Name = "label10";
             // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.GreenYellow;
@@ -703,10 +693,10 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button1);
@@ -720,6 +710,7 @@
             this.Controls.Add(this.new_label);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.greetings);
+            this.Controls.Add(this.label6);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -734,7 +725,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -815,7 +805,6 @@
         private System.Windows.Forms.Timer timer6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

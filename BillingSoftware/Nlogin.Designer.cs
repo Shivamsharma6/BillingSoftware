@@ -30,6 +30,7 @@ namespace BillingSoftware
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nlogin));
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -52,10 +53,10 @@ namespace BillingSoftware
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Indigo;
+            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(183, 200);
+            this.button1.ForeColor = System.Drawing.Color.Cyan;
+            this.button1.Location = new System.Drawing.Point(183, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 43);
             this.button1.TabIndex = 78;
@@ -64,8 +65,8 @@ namespace BillingSoftware
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(96, 213);
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(83, 199);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(203, 1);
             this.panel4.TabIndex = 70;
@@ -90,12 +91,12 @@ namespace BillingSoftware
             // btn_Submit
             // 
             this.btn_Submit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Submit.BackColor = System.Drawing.Color.Indigo;
+            this.btn_Submit.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Submit.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Submit.ForeColor = System.Drawing.Color.LightCyan;
+            this.btn_Submit.ForeColor = System.Drawing.Color.Cyan;
             this.btn_Submit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_Submit.Location = new System.Drawing.Point(81, 200);
+            this.btn_Submit.Location = new System.Drawing.Point(81, 221);
             this.btn_Submit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(95, 43);
@@ -107,11 +108,11 @@ namespace BillingSoftware
             // txt_UserName
             // 
             this.txt_UserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_UserName.BackColor = System.Drawing.Color.LightCyan;
+            this.txt_UserName.BackColor = System.Drawing.Color.MidnightBlue;
             this.txt_UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_UserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_UserName.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.ForeColor = System.Drawing.Color.Black;
+            this.txt_UserName.ForeColor = System.Drawing.Color.Cyan;
             this.txt_UserName.Location = new System.Drawing.Point(81, 83);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.txt_UserName.Name = "txt_UserName";
@@ -123,10 +124,10 @@ namespace BillingSoftware
             // txt_Password
             // 
             this.txt_Password.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_Password.BackColor = System.Drawing.Color.LightCyan;
+            this.txt_Password.BackColor = System.Drawing.Color.MidnightBlue;
             this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Password.Font = new System.Drawing.Font("Book Antiqua", 15.75F);
-            this.txt_Password.ForeColor = System.Drawing.Color.Black;
+            this.txt_Password.ForeColor = System.Drawing.Color.Cyan;
             this.txt_Password.Location = new System.Drawing.Point(81, 123);
             this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Password.Multiline = true;
@@ -139,10 +140,10 @@ namespace BillingSoftware
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.Color.LightCyan;
+            this.textBox1.BackColor = System.Drawing.Color.MidnightBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Italic);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.ForeColor = System.Drawing.Color.Cyan;
             this.textBox1.Location = new System.Drawing.Point(83, 167);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(208, 26);
@@ -158,7 +159,7 @@ namespace BillingSoftware
             this.label6.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Navy;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(82, 359);
+            this.label6.Location = new System.Drawing.Point(82, 358);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(189, 36);
             this.label6.TabIndex = 71;
@@ -181,7 +182,7 @@ namespace BillingSoftware
             // Greet
             // 
             this.Greet.AutoSize = true;
-            this.Greet.BackColor = System.Drawing.Color.LightCyan;
+            this.Greet.BackColor = System.Drawing.Color.Transparent;
             this.Greet.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Greet.ForeColor = System.Drawing.Color.Navy;
             this.Greet.Location = new System.Drawing.Point(100, 49);
@@ -230,10 +231,10 @@ namespace BillingSoftware
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.LightCyan;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Indigo;
-            this.label4.Location = new System.Drawing.Point(137, 0);
+            this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label4.Location = new System.Drawing.Point(145, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 40);
             this.label4.TabIndex = 88;
@@ -252,7 +253,9 @@ namespace BillingSoftware
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.LightCyan;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox1.Controls.Add(this.txt_UserName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button1);
@@ -275,9 +278,9 @@ namespace BillingSoftware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(402, 333);
+            this.ClientSize = new System.Drawing.Size(402, 332);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pb);
             this.Controls.Add(this.label6);
