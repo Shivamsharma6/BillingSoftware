@@ -322,7 +322,7 @@ namespace BillingSoftware
 
         private void purcbook_Click(object sender, EventArgs e)
         {
-            purchasebook ms = new purchasebook();
+            PurchaseBook ms = new PurchaseBook();
             ms.Show();
         }
 

@@ -211,11 +211,11 @@
     <Compile Include="Purchase.Designer.cs">
       <DependentUpon>Purchase.cs</DependentUpon>
     </Compile>
-    <Compile Include="purchasebook.cs">
+    <Compile Include="PurchaseBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="purchasebook.Designer.cs">
-      <DependentUpon>purchasebook.cs</DependentUpon>
+    <Compile Include="PurchaseBook.Designer.cs">
+      <DependentUpon>PurchaseBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -402,8 +402,8 @@
     <EmbeddedResource Include="Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="purchasebook.resx">
-      <DependentUpon>purchasebook.cs</DependentUpon>
+    <EmbeddedResource Include="PurchaseBook.resx">
+      <DependentUpon>PurchaseBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

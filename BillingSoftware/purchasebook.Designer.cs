@@ -1,7 +1,7 @@
 ﻿
 namespace BillingSoftware
 {
-    partial class purchasebook
+    partial class PurchaseBook
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,19 @@ namespace BillingSoftware
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(purchasebook));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseBook));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.from_date = new System.Windows.Forms.DateTimePicker();
+            this.to_date = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
+            this.purchase_datagrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchase_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -47,9 +49,9 @@ namespace BillingSoftware
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(96, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(988, 426);
+            this.pictureBox1.Size = new System.Drawing.Size(1298, 616);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -57,11 +59,11 @@ namespace BillingSoftware
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 130);
+            this.label1.Location = new System.Drawing.Point(103, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
+            this.label1.Size = new System.Drawing.Size(142, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Company Name ";
+            this.label1.Text = "Customer Name ";
             // 
             // label2
             // 
@@ -83,19 +85,19 @@ namespace BillingSoftware
             this.label3.TabIndex = 4;
             this.label3.Text = "To Date";
             // 
-            // dateTimePicker1
+            // from_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(518, 124);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.from_date.Location = new System.Drawing.Point(518, 124);
+            this.from_date.Name = "from_date";
+            this.from_date.Size = new System.Drawing.Size(200, 20);
+            this.from_date.TabIndex = 5;
             // 
-            // dateTimePicker2
+            // to_date
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(825, 125);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 6;
+            this.to_date.Location = new System.Drawing.Point(825, 125);
+            this.to_date.Name = "to_date";
+            this.to_date.Size = new System.Drawing.Size(200, 20);
+            this.to_date.TabIndex = 6;
             // 
             // textBox1
             // 
@@ -118,7 +120,7 @@ namespace BillingSoftware
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(537, 163);
+            this.Search.Location = new System.Drawing.Point(518, 163);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(99, 25);
             this.Search.TabIndex = 9;
@@ -126,23 +128,37 @@ namespace BillingSoftware
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // purchasebook
+            // purchase_datagrid
+            // 
+            this.purchase_datagrid.AllowUserToAddRows = false;
+            this.purchase_datagrid.AllowUserToDeleteRows = false;
+            this.purchase_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.purchase_datagrid.Location = new System.Drawing.Point(33, 230);
+            this.purchase_datagrid.Name = "purchase_datagrid";
+            this.purchase_datagrid.ReadOnly = true;
+            this.purchase_datagrid.Size = new System.Drawing.Size(1266, 376);
+            this.purchase_datagrid.TabIndex = 10;
+            // 
+            // PurchaseBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 450);
+            this.ClientSize = new System.Drawing.Size(1629, 675);
+            this.Controls.Add(this.purchase_datagrid);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.to_date);
+            this.Controls.Add(this.from_date);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "purchasebook";
-            this.Text = "purchasebook";
+            this.Name = "PurchaseBook";
+            this.Text = "PurchaseBook";
+            this.Load += new System.EventHandler(this.PurchaseBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchase_datagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,10 +169,11 @@ namespace BillingSoftware
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker from_date;
+        private System.Windows.Forms.DateTimePicker to_date;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.DataGridView purchase_datagrid;
     }
 }
