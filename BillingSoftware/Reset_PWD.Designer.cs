@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Update = new System.Windows.Forms.Button();
             this.textuname = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.textpass = new System.Windows.Forms.TextBox();
@@ -121,7 +120,6 @@
             this.Controls.Add(this.textpass);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.textuname);
-            this.Controls.Add(this.Update);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -136,7 +134,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Update;
         private System.Windows.Forms.TextBox textuname;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.TextBox textpass;

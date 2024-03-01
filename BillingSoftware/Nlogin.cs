@@ -29,7 +29,6 @@ namespace BillingSoftware
         }
 
         string cs = @"Data Source=localhost;Initial Catalog=MyDatabase.mdf;Integrated Security=True";
-        String user;
 
         public Nlogin()
         {
