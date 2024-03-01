@@ -225,11 +225,11 @@ namespace BillingSoftware
                 {
                     productcode = GP1.Rows[row].Cells[1].Value.ToString();
                     name = GP1.Rows[row].Cells[0].Value.ToString();
-                    pack = GP1.Rows[row].Cells[1].Value.ToString();
-                    expiry = GP1.Rows[row].Cells[1].Value.ToString();
-                    price = GP1.Rows[row].Cells[2].Value.ToString();
-                    quantity = GP1.Rows[row].Cells[3].Value.ToString();
-                    total = GP1.Rows[row].Cells[4].Value.ToString();
+                    pack = GP1.Rows[row].Cells[3].Value.ToString();
+                    expiry = GP1.Rows[row].Cells[2].Value.ToString();
+                    price = GP1.Rows[row].Cells[4].Value.ToString();
+                    quantity = GP1.Rows[row].Cells[5].Value.ToString();
+                    total = GP1.Rows[row].Cells[8].Value.ToString();
 
                     SqlConnection con = new SqlConnection(cs);
                     con.Open();
@@ -668,10 +668,6 @@ namespace BillingSoftware
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                }
-                if (GP1.Rows.Count > 0)
-                {
-                    ActiveControl = subttl;
                 }
             }
         }
